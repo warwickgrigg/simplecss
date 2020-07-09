@@ -1,0 +1,147 @@
+@import "./simplex-palette.scss";
+
+:root {
+  --dark-color: var(--blue-9);
+  --main-bg-color: var(--indigo-0);
+  --main-fg-color: var(--black-0);
+  --spacer: 0.5em;
+}
+
+@import "./simplex.scss";
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: 'Noto Sans', sans-serif;
+}
+
+body {
+  --body-fg-color: var(--main-fg-color);
+  --body-bg-color: var(--main-bg-color);
+  color: var(--body-fg-color);
+  background-color: var(--body-bg-color);
+  margin: 0;
+}
+
+.app {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.padded {
+  padding: 1rem;
+}
+
+.container.padded {
+  padding: 2rem;
+}
+
+header.container.padded {
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+
+.shaded {
+  background: var(--gray-2);
+}
+
+.banner {
+  --hero-gradient-start: var(--blue-9);
+  --hero-gradient-end: var(--blue-7);
+  background: linear-gradient(45deg, var(--hero-gradient-start), var(--hero-gradient-end));
+}
+
+.banner, .banner * {
+  color: var(--indigo-0);
+}
+
+.footer {
+  margin-top: 2em;
+  background-color: var(--gray-9);
+}
+
+.footer *, .footer a {
+  color: var(--gray-0);
+}
+
+.worktop {
+  //background-image: url("/images/worktop3.jpg");
+  background-image: url("https://source.unsplash.com/Im7lZjxeLhg/640x453");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo1 {
+  color: var(--indigo-9);
+  font-size: 110%;
+}
+
+.logo2 {
+  color: var(--pink-9);
+}
+
+.team .card {
+  grid-template-rows: 16em 1fr var(--footer-height);
+}
+
+.pointy {
+  content: "";
+  margin: auto;
+  --pointy-height: 1em;
+  box-sizing: border-box;
+  height: 0;
+  width: 0;
+  border: calc(var(--pointy-height)/1) solid transparent;
+  border-bottom: 0;
+  border-top: var(--pointy-height) solid var(--gray-2);
+}
+
+
+/* https://wweb.dev/resources/css-separator-generator */
+
+/*
+<section>
+  <div class="skewed"></div>
+</section>
+*/
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 20em;
+  background: #2c3e50;
+  z-index: -1;
+  transform: skewY(-8deg);
+  transform-origin: top left;
+}
+
+/* <section class="triangle"></section> */
+
+.triangled {
+  position: relative;
+  background: #2c3e50;
+  height: 50vh;
+}
+
+.triangled::before {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #2c3e50 transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}

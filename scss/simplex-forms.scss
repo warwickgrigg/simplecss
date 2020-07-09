@@ -1,0 +1,43 @@
+input,
+select,
+textarea {
+  display: block;
+  width: 100%;
+  font-size: 1rem;
+  line-height: 1.5;
+  padding: .5rem;
+  box-shadow: none;
+  border: thin solid lightgray;
+  margin-top: 1em;
+}
+
+form button { 
+  margin-top: 1em;
+}
+
+label {
+  margin-top: .5em;
+  display: inline-block;
+  padding: .25em .25em .25em 0;
+}
+
+label + input,
+label + select,
+label + textarea {
+  margin-top: 0;
+}
+
+input[type="checkbox"] {
+  display: inline-block;
+  width: auto;
+  margin-top: 0;
+}
+
+input[type="checkbox"] + label {
+  margin: 0 1em 0 .25em;
+}
+
+.custom-control-inline {
+  display: inline-flex;
+  align-items: center;
+}
