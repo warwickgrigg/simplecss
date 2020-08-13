@@ -4,6 +4,9 @@
   "description": "Simple CSS",
   "main": "sccs/styles.scss",
   "scripts": {
+    "build": "sass --watch input.scss:dist",
+    "dev": "sass --watch input.scss:dist",
+    "xbuild": "cp scss/* dist/; for f in dist/*.scss; do mv -- \"$f\" \"${f%.scss}.css\"; done",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +18,8 @@
   "bugs": {
     "url": "https://github.com/warwickgrigg/simplecss/issues"
   },
-  "homepage": "https://github.com/warwickgrigg/simplecss#readme"
+  "homepage": "https://github.com/warwickgrigg/simplecss#readme",
+  "devDependencies": {
+    "sass": "^1.26.10"
+  }
 }
