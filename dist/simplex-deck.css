@@ -1,0 +1,126 @@
+/* CARDS */
+.deck {
+  --card-min-width: 15rem;
+  --card-default-width: 15rem;
+}
+
+/* IE only */
+@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .deck > div {
+    width: var(--card-default-width);
+    margin-bottom: calc(2 * var(--spacer));
+  }
+
+  .deck .figure img {
+    max-width: calc(var(--card-default-width) * 5 / 6);
+  }
+}
+/* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
+@supports (display: grid) {
+  .deck {
+    /* autoprefixer: off */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
+    grid-gap: calc(2 * var(--spacer));
+  }
+}
+/* Main CSS */
+.card {
+  --card-header-color: var(--blue-5);
+  --card-fg-color: var(--main-fg-color);
+  --card-bg-color: var(--blue-1);
+  --header-height: 8em;
+  --footer-height: 3em;
+  box-sizing: border-box;
+  color: var(--card-fg-color);
+  background-color: var(--card-bg-color);
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
+
+/* experimental
+
+.card.landscape {
+  grid-template-columns: calc(1.42 * var(--header-height)) auto;
+  grid-template-areas: "head body" "head foot";
+}
+
+*/
+.card:not(.landscape) {
+  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-areas: "head" "body" "foot";
+}
+
+.card .header,
+.card .footer {
+  background-color: var(--card-header-color);
+  margin: var(--spacer);
+  padding: var(--spacer);
+}
+
+.card .header {
+  grid-area: head;
+}
+
+.card .header.figure {
+  padding: 0;
+  background-color: var(--card-bg-color);
+}
+
+.card .body {
+  grid-area: body;
+  margin: 0 var(--spacer);
+  padding: 0 var(--spacer);
+}
+
+.card .footer {
+  grid-area: foot;
+}
+
+.card .body p.demo:after {
+  content: "card demo content blurb blurb blurb blurby blurb djhfjdgfhg fdjhfkjhdfj kjhfdhdfdkj";
+}
+
+/* MEDIA */
+.media {
+  --figure-width: 300px;
+  display: flex;
+  align-items: flex-start;
+  /* IE11 !? */
+  flex-wrap: wrap;
+}
+
+.media + .media {
+  margin-top: calc(2 * var(--spacer));
+}
+
+.media.flipped {
+  flex-direction: row-reverse;
+}
+
+.media .figure {
+  margin: var(--spacer);
+  max-width: var(--figure-width);
+}
+
+.media .figure img {
+  max-width: var(--figure-width);
+}
+
+.media .content {
+  flex: 1;
+  min-width: var(--figure-width);
+}
+
+.media .content *:first {
+  margin-top: 0;
+}
+
+/*# sourceMappingURL=simplex-deck.css.map */
