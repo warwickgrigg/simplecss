@@ -55,6 +55,8 @@
 */
 .card:not(.landscape) {
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-columns: 1fr;
+  /* needed ? */
   grid-template-areas: "head" "body" "foot";
 }
 

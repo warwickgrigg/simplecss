@@ -1,13 +1,9 @@
 @charset "UTF-8";
-:root {
-  --heading-color: var(--blue-9);
-}
-
 h1,
 h2,
 h3,
 h4 {
-  color: var(--heading-color);
+  color: var(--blue-9);
 }
 
 li {
@@ -258,6 +254,8 @@ input[type=checkbox] {
 */
 .card:not(.landscape) {
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-columns: 1fr;
+  /* needed ? */
   grid-template-areas: "head" "body" "foot";
 }
 

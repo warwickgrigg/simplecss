@@ -1,25 +1,26 @@
 @charset "UTF-8";
+/* 10528A 39CDF7 FAF3F4 F49227 FA7108*/
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 :root {
   /* simplest */
-  --navy: #001F3F;
-  --blue: #0074D9;
-  --aqua: #7FDBFF;
-  --teal: #39CCCC;
-  --olive: #3D9970;
-  --green: #2ECC40;
-  --lime: #01FF70;
-  --yellow: #FFDC00;
-  --orange: #FF851B;
-  --red: #FF4136;
-  --fuchsia: #F012BE;
-  --purple: #B10DC9;
-  --maroon: #85144B;
-  --white: #FFFFFF;
-  --silver: #DDDDDD;
-  --gray: #AAAAAA;
+  --navy: #001f3f;
+  --blue: #0074d9;
+  --aqua: #7fdbff;
+  --teal: #39cccc;
+  --olive: #3d9970;
+  --green: #2ecc40;
+  --lime: #01ff70;
+  --yellow: #ffdc00;
+  --orange: #ff851b;
+  --red: #ff4136;
+  --fuchsia: #f012be;
+  --purple: #b10dc9;
+  --maroon: #85144b;
+  --white: #ffffff;
+  --silver: #dddddd;
+  --gray: #aaaaaa;
   --black: #111111;
-  --white: #EEEEEE;
+  --white: #eeeeee;
   /* generated */
   --base-0: #003c86;
   --black-0: #394049;
@@ -162,15 +163,11 @@
   --spacer: 0.5em;
 }
 
-:root {
-  --heading-color: var(--blue-9);
-}
-
 h1,
 h2,
 h3,
 h4 {
-  color: var(--heading-color);
+  color: var(--blue-9);
 }
 
 li {
@@ -421,6 +418,8 @@ input[type=checkbox] {
 */
 .card:not(.landscape) {
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-columns: 1fr;
+  /* needed ? */
   grid-template-areas: "head" "body" "foot";
 }
 

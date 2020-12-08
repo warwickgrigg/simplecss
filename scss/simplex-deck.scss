@@ -6,7 +6,7 @@
 }
 
 /* IE only */
-@media only screen and (-ms-high-contrast:active), (-ms-high-contrast:none) {
+@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .deck {
     display: flex;
     flex-wrap: wrap;
@@ -59,7 +59,11 @@
 */
 .card:not(.landscape) {
   grid-template-rows: var(--header-height) 1fr var(--footer-height);
-  grid-template-areas: "head" "body" "foot";
+  grid-template-columns: 1fr; /* needed ? */
+  grid-template-areas:
+    "head"
+    "body"
+    "foot";
 }
 
 .card .header,

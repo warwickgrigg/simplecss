@@ -1,12 +1,10 @@
-:root {
-  --heading-color: var(--blue-9);
-}
+$heading-color: var(--blue-9);
 
 h1,
 h2,
 h3,
 h4 {
-  color: var(--heading-color);
+  color: $heading-color;
 }
 
 li {
@@ -27,7 +25,7 @@ $type-ratios: (
   "perfectFourth": 1.333,
   "augmentedFourth": 1.414,
   "perfectFifth": 1.5,
-  "goldenRatio": 1.618
+  "goldenRatio": 1.618,
 );
 
 @function type-ratio($key) {
@@ -39,7 +37,7 @@ $type-base-size: 1.06rem;
 
 // Select by key of map, or use a custom value
 // original article selects "perfectFourth"
-$type-size-ratio: type-ratio("minorThird"); 
+$type-size-ratio: type-ratio("minorThird");
 
 // List in descending order to prevent extra sort function
 // Limited to high-touch heading styles

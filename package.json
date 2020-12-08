@@ -4,10 +4,12 @@
   "description": "Simple CSS",
   "main": "dist/styles.css",
   "files": [
-    "dist"
+    "dist",
+    "scss"
   ],
   "scripts": {
     "build": "sass scss:dist",
+    "compress": "sass scss:dist --style compressed",
     "dev": "sass --watch scss:dist",
     "xbuild": "cp scss/* dist/; for f in dist/*.scss; do mv -- \"$f\" \"${f%.scss}.css\"; done",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -23,6 +25,6 @@
   },
   "homepage": "https://github.com/warwickgrigg/simplecss#readme",
   "devDependencies": {
-    "sass": "^1.26.10"
+    "sass": "^1.30.0"
   }
 }
