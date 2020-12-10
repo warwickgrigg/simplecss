@@ -1,9 +1,4 @@
 /* CARDS */
-.deck {
-  --card-min-width: 15rem;
-  --card-default-width: 15rem;
-}
-
 /* IE only */
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .deck {
@@ -13,12 +8,12 @@
   }
 
   .deck > div {
-    width: var(--card-default-width);
-    margin-bottom: calc(2 * var(--spacer));
+    width: 15rem;
+    margin-bottom: calc(2 * $spacer);
   }
 
   .deck .figure img {
-    max-width: calc(var(--card-default-width) * 5 / 6);
+    max-width: calc($card-default-width * 5 / 6);
   }
 }
 /* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
@@ -26,20 +21,15 @@
   .deck {
     /* autoprefixer: off */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
-    grid-gap: calc(2 * var(--spacer));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: calc(2 * $spacer);
   }
 }
 /* Main CSS */
 .card {
-  --card-header-color: var(--blue-5);
-  --card-fg-color: var(--main-fg-color);
-  --card-bg-color: var(--blue-1);
-  --header-height: 8em;
-  --footer-height: 3em;
   box-sizing: border-box;
-  color: var(--card-fg-color);
-  background-color: var(--card-bg-color);
+  color: #394049;
+  background-color: #e9eef4;
   padding: 0;
   margin: 0;
   display: grid;
@@ -48,13 +38,13 @@
 /* experimental
 
 .card.landscape {
-  grid-template-columns: calc(1.42 * var(--header-height)) auto;
+  grid-template-columns: calc(1.42 * $header-height) auto;
   grid-template-areas: "head body" "head foot";
 }
 
 */
 .card:not(.landscape) {
-  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-rows: 8em 1fr 3em;
   grid-template-columns: 1fr;
   /* needed ? */
   grid-template-areas: "head" "body" "foot";
@@ -62,9 +52,9 @@
 
 .card .header,
 .card .footer {
-  background-color: var(--card-header-color);
-  margin: var(--spacer);
-  padding: var(--spacer);
+  background-color: #9eb5d1;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .card .header {
@@ -73,13 +63,13 @@
 
 .card .header.figure {
   padding: 0;
-  background-color: var(--card-bg-color);
+  background-color: #e9eef4;
 }
 
 .card .body {
   grid-area: body;
-  margin: 0 var(--spacer);
-  padding: 0 var(--spacer);
+  margin: 0 0.5em;
+  padding: 0 0.5em;
 }
 
 .card .footer {
@@ -92,7 +82,6 @@
 
 /* MEDIA */
 .media {
-  --figure-width: 300px;
   display: flex;
   align-items: flex-start;
   /* IE11 !? */
@@ -100,7 +89,7 @@
 }
 
 .media + .media {
-  margin-top: calc(2 * var(--spacer));
+  margin-top: calc(2 * $spacer);
 }
 
 .media.flipped {
@@ -108,17 +97,17 @@
 }
 
 .media .figure {
-  margin: var(--spacer);
-  max-width: var(--figure-width);
+  margin: 0.5em;
+  max-width: 300px;
 }
 
 .media .figure img {
-  max-width: var(--figure-width);
+  max-width: 300px;
 }
 
 .media .content {
   flex: 1;
-  min-width: var(--figure-width);
+  min-width: 300px;
 }
 
 .media .content *:first {

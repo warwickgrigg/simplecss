@@ -3,7 +3,7 @@ h1,
 h2,
 h3,
 h4 {
-  color: var(--blue-9);
+  color: #003c86;
 }
 
 li {
@@ -54,16 +54,10 @@ body {
   line-height: 1.5;
 }
 
-:root {
-  --button-bg-color: var(--blue-8);
-  --button-fg-color: var(--indigo-0);
-  --button-bg-color-hover: var(--indigo-9);
-}
-
 button,
 .button {
-  color: var(--button-fg-color);
-  background-color: var(--button-bg-color);
+  color: #f9f9fc;
+  background-color: #416ea5;
   border: none;
   font-size: 0.833rem;
   padding: 1em 1.5em;
@@ -74,9 +68,9 @@ button,
 }
 
 .button.inverted {
-  background-color: var(--button-fg-color);
-  color: var(--button-bg-color);
-  border: thin solid var(--button-bg-color);
+  background-color: #f9f9fc;
+  color: #416ea5;
+  border: thin solid #416ea5;
   border-radius: 0.25em;
 }
 
@@ -86,8 +80,8 @@ button,
 
 .button:hover,
 .button:focus {
-  color: var(--button-fg-color);
-  background-color: var(--button-bg-color-hover);
+  color: #f9f9fc;
+  background-color: #332d9c;
 }
 
 form,
@@ -182,7 +176,7 @@ input[type=checkbox] {
 }
 
 .rounded {
-  border-radius: var(--spacer);
+  border-radius: 0.5em;
 }
 
 .ellipse {
@@ -198,11 +192,6 @@ input[type=checkbox] {
 }
 
 /* CARDS */
-.deck {
-  --card-min-width: 15rem;
-  --card-default-width: 15rem;
-}
-
 /* IE only */
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .deck {
@@ -212,12 +201,12 @@ input[type=checkbox] {
   }
 
   .deck > div {
-    width: var(--card-default-width);
-    margin-bottom: calc(2 * var(--spacer));
+    width: 15rem;
+    margin-bottom: calc(2 * $spacer);
   }
 
   .deck .figure img {
-    max-width: calc(var(--card-default-width) * 5 / 6);
+    max-width: calc($card-default-width * 5 / 6);
   }
 }
 /* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
@@ -225,20 +214,15 @@ input[type=checkbox] {
   .deck {
     /* autoprefixer: off */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
-    grid-gap: calc(2 * var(--spacer));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: calc(2 * $spacer);
   }
 }
 /* Main CSS */
 .card {
-  --card-header-color: var(--blue-5);
-  --card-fg-color: var(--main-fg-color);
-  --card-bg-color: var(--blue-1);
-  --header-height: 8em;
-  --footer-height: 3em;
   box-sizing: border-box;
-  color: var(--card-fg-color);
-  background-color: var(--card-bg-color);
+  color: #394049;
+  background-color: #e9eef4;
   padding: 0;
   margin: 0;
   display: grid;
@@ -247,13 +231,13 @@ input[type=checkbox] {
 /* experimental
 
 .card.landscape {
-  grid-template-columns: calc(1.42 * var(--header-height)) auto;
+  grid-template-columns: calc(1.42 * $header-height) auto;
   grid-template-areas: "head body" "head foot";
 }
 
 */
 .card:not(.landscape) {
-  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-rows: 8em 1fr 3em;
   grid-template-columns: 1fr;
   /* needed ? */
   grid-template-areas: "head" "body" "foot";
@@ -261,9 +245,9 @@ input[type=checkbox] {
 
 .card .header,
 .card .footer {
-  background-color: var(--card-header-color);
-  margin: var(--spacer);
-  padding: var(--spacer);
+  background-color: #9eb5d1;
+  margin: 0.5em;
+  padding: 0.5em;
 }
 
 .card .header {
@@ -272,13 +256,13 @@ input[type=checkbox] {
 
 .card .header.figure {
   padding: 0;
-  background-color: var(--card-bg-color);
+  background-color: #e9eef4;
 }
 
 .card .body {
   grid-area: body;
-  margin: 0 var(--spacer);
-  padding: 0 var(--spacer);
+  margin: 0 0.5em;
+  padding: 0 0.5em;
 }
 
 .card .footer {
@@ -291,7 +275,6 @@ input[type=checkbox] {
 
 /* MEDIA */
 .media {
-  --figure-width: 300px;
   display: flex;
   align-items: flex-start;
   /* IE11 !? */
@@ -299,7 +282,7 @@ input[type=checkbox] {
 }
 
 .media + .media {
-  margin-top: calc(2 * var(--spacer));
+  margin-top: calc(2 * $spacer);
 }
 
 .media.flipped {
@@ -307,29 +290,21 @@ input[type=checkbox] {
 }
 
 .media .figure {
-  margin: var(--spacer);
-  max-width: var(--figure-width);
+  margin: 0.5em;
+  max-width: 300px;
 }
 
 .media .figure img {
-  max-width: var(--figure-width);
+  max-width: 300px;
 }
 
 .media .content {
   flex: 1;
-  min-width: var(--figure-width);
+  min-width: 300px;
 }
 
 .media .content *:first {
   margin-top: 0;
-}
-
-:root {
-  --nav-bg-color: var(--main-bg-color);
-  --nav-fg-color: var(--black-0);
-  --nav-link-color: var(--blue-9);
-  --nav-active-color: var(--blue-9);
-  --nav-button-color: var(--main-bg-color);
 }
 
 .navbar {
@@ -343,7 +318,7 @@ input[type=checkbox] {
   grid-template-areas: "title left right";
   /*align-items: center;*/
   padding: 0;
-  color: var(--nav-fg-color);
+  color: #394049;
 }
 
 .navbar > * {
@@ -384,7 +359,7 @@ input[type=checkbox] {
 .nav a,
 .navbar a:not(.title),
 .navbar .button {
-  color: var(--nav-fg-color);
+  color: #394049;
 }
 
 .navbar .button {
@@ -395,8 +370,8 @@ input[type=checkbox] {
 .navbar .button,
 .nav a:hover,
 .navbar a:hover {
-  color: var(--nav-link-color);
-  background: var(--nav-bg-color);
+  color: #003c86;
+  background: #f9f9fc;
 }
 
 .nav *,
@@ -427,8 +402,8 @@ input[type=checkbox] {
 
   .navbar .left > *.active,
 .navbar .left > *:active {
-    border-bottom: 3px solid var(--nav-link-color);
-    color: var(--nav-link-color);
+    border-bottom: 3px solid #003c86;
+    color: #003c86;
   }
 
   .navbar .absolute {
@@ -441,8 +416,8 @@ input[type=checkbox] {
     margin-top: 1.5rem;
     left: -1rem;
     z-index: 2;
-    background: var(--nav-bg-color);
-    border: solid thin var(--nav-fg-color);
+    background: #f9f9fc;
+    border: solid thin #394049;
     border-radius: 0.5em;
   }
 
@@ -510,7 +485,7 @@ input[type=checkbox] {
 
   .navbar .left > *.active,
 .navbar .left > *:active {
-    color: var(--nav-link-color);
+    color: #003c86;
   }
 
   .navbar .below *:before {

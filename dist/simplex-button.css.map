@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":["../scss/simplex-button.scss"],"names":[],"mappings":"AAAA;EACE;EACA;EACA;;;AAGF;AAAA;EAEE;EACA;EACA;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE;EACA;EACA;EACA;;;AAGF;EACE;;;AAGF;AAAA;EAEE;EACA","file":"simplex-button.css"}
+{"version":3,"sourceRoot":"","sources":["../scss/simplex-button.scss","../scss/simplex-palette.scss"],"names":[],"mappings":"AAMA;AAAA;EAEE,OC0CS;EDzCT,kBCuCO;EDtCP;EACA;EACA;EACA;EACA;EACA;EACA;;;AAGF;EACE,kBC8BS;ED7BT,OC2BO;ED1BP;EACA;;;AAGF;EACE;;;AAGF;AAAA;EAEE,OCkBS;EDjBT,kBC0BS","file":"simplex-button.css"}

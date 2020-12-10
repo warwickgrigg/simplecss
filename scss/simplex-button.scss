@@ -1,13 +1,13 @@
-:root {
-  --button-bg-color: var(--blue-8);
-  --button-fg-color: var(--indigo-0);
-  --button-bg-color-hover: var(--indigo-9);
-}
+@import "./simplex-variables.scss";
+
+$button-bg-color: $blue-8 !default;
+$button-fg-color: $indigo-0 !default;
+$button-bg-color-hover: $indigo-9 !default;
 
 button,
 .button {
-  color: var(--button-fg-color);
-  background-color: var(--button-bg-color);
+  color: $button-fg-color;
+  background-color: $button-bg-color;
   border: none;
   font-size: 0.833rem;
   padding: 1em 1.5em;
@@ -18,9 +18,9 @@ button,
 }
 
 .button.inverted {
-  background-color: var(--button-fg-color);
-  color: var(--button-bg-color);
-  border: thin solid var(--button-bg-color);
+  background-color: $button-fg-color;
+  color: $button-bg-color;
+  border: thin solid $button-bg-color;
   border-radius: 0.25em;
 }
 
@@ -30,6 +30,6 @@ button,
 
 .button:hover,
 .button:focus {
-  color: var(--button-fg-color);
-  background-color: var(--button-bg-color-hover);
+  color: $button-fg-color;
+  background-color: $button-bg-color-hover;
 }

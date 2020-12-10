@@ -1,9 +1,15 @@
+@import "./simplex-variables.scss";
+
 /* CARDS */
 
-.deck {
-  --card-min-width: 15rem;
-  --card-default-width: 15rem;
-}
+$card-min-width: 15rem !default;
+$card-default-width: 15rem !default;
+$card-header-color: $blue-5 !default;
+$card-fg-color: $main-fg-color !default;
+$card-bg-color: $blue-1 !default;
+$header-height: 8em !default;
+$footer-height: 3em !default;
+$figure-width: 300px !default;
 
 /* IE only */
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
@@ -14,12 +20,12 @@
   }
 
   .deck > div {
-    width: var(--card-default-width);
-    margin-bottom: calc(2 * var(--spacer));
+    width: $card-default-width;
+    margin-bottom: calc(2 * $spacer);
   }
 
   .deck .figure img {
-    max-width: calc(var(--card-default-width) * 5 / 6);
+    max-width: calc($card-default-width * 5 / 6);
   }
 }
 //
@@ -28,22 +34,17 @@
   .deck {
     /* autoprefixer: off */
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(var(--card-min-width), 1fr));
-    grid-gap: calc(2 * var(--spacer));
+    grid-template-columns: repeat(auto-fit, minmax($card-min-width, 1fr));
+    grid-gap: calc(2 * $spacer);
   }
 }
 
 /* Main CSS */
 
 .card {
-  --card-header-color: var(--blue-5);
-  --card-fg-color: var(--main-fg-color);
-  --card-bg-color: var(--blue-1);
-  --header-height: 8em;
-  --footer-height: 3em;
   box-sizing: border-box;
-  color: var(--card-fg-color);
-  background-color: var(--card-bg-color);
+  color: $card-fg-color;
+  background-color: $card-bg-color;
   padding: 0;
   margin: 0;
   display: grid;
@@ -52,13 +53,13 @@
 /* experimental
 
 .card.landscape {
-  grid-template-columns: calc(1.42 * var(--header-height)) auto;
+  grid-template-columns: calc(1.42 * $header-height) auto;
   grid-template-areas: "head body" "head foot";
 }
 
 */
 .card:not(.landscape) {
-  grid-template-rows: var(--header-height) 1fr var(--footer-height);
+  grid-template-rows: $header-height 1fr $footer-height;
   grid-template-columns: 1fr; /* needed ? */
   grid-template-areas:
     "head"
@@ -68,9 +69,9 @@
 
 .card .header,
 .card .footer {
-  background-color: var(--card-header-color);
-  margin: var(--spacer);
-  padding: var(--spacer);
+  background-color: $card-header-color;
+  margin: $spacer;
+  padding: $spacer;
 }
 
 .card .header {
@@ -79,13 +80,13 @@
 
 .card .header.figure {
   padding: 0;
-  background-color: var(--card-bg-color);
+  background-color: $card-bg-color;
 }
 
 .card .body {
   grid-area: body;
-  margin: 0 var(--spacer);
-  padding: 0 var(--spacer);
+  margin: 0 $spacer;
+  padding: 0 $spacer;
 }
 
 .card .footer {
@@ -99,14 +100,13 @@
 /* MEDIA */
 
 .media {
-  --figure-width: 300px;
   display: flex;
   align-items: flex-start; /* IE11 !? */
   flex-wrap: wrap;
 }
 
 .media + .media {
-  margin-top: calc(2 * var(--spacer));
+  margin-top: calc(2 * $spacer);
 }
 
 .media.flipped {
@@ -114,17 +114,17 @@
 }
 
 .media .figure {
-  margin: var(--spacer);
-  max-width: var(--figure-width);
+  margin: $spacer;
+  max-width: $figure-width;
 }
 
 .media .figure img {
-  max-width: var(--figure-width);
+  max-width: $figure-width;
 }
 
 .media .content {
   flex: 1;
-  min-width: var(--figure-width);
+  min-width: $figure-width;
 }
 
 .media .content *:first {

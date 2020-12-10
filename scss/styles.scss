@@ -1,28 +1,20 @@
-@import "./simplex-palette.scss";
-
-:root {
-  --dark-color: var(--blue-9);
-  --main-bg-color: var(--indigo-0);
-  --main-fg-color: var(--black-0);
-  --spacer: 0.5em;
-}
-
+@import "./simplex-variables.scss";
 @import "./simplex.scss";
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
   box-sizing: border-box;
 }
 
 html {
-  font-family: 'Noto Sans', sans-serif;
+  font-family: "Noto Sans", sans-serif;
 }
 
 body {
-  --body-fg-color: var(--main-fg-color);
-  --body-bg-color: var(--main-bg-color);
-  color: var(--body-fg-color);
-  background-color: var(--body-bg-color);
+  $body-fg-color: $main-fg-color !default;
+  $body-bg-color: $main-bg-color !default;
+  color: $body-fg-color;
+  background-color: $body-bg-color;
   margin: 0;
 }
 
@@ -49,26 +41,28 @@ header.container.padded {
 }
 
 .shaded {
-  background: var(--gray-2);
+  background: $gray-2;
 }
 
 .banner {
-  --hero-gradient-start: var(--blue-9);
-  --hero-gradient-end: var(--blue-7);
-  background: linear-gradient(45deg, var(--hero-gradient-start), var(--hero-gradient-end));
+  $hero-gradient-start: $blue-9 !default;
+  $hero-gradient-end: $blue-7 !default;
+  background: linear-gradient(45deg, $hero-gradient-start, $hero-gradient-end);
 }
 
-.banner, .banner * {
-  color: var(--indigo-0);
+.banner,
+.banner * {
+  color: $indigo-0;
 }
 
 .footer {
   margin-top: 2em;
-  background-color: var(--gray-9);
+  background-color: $gray-9;
 }
 
-.footer *, .footer a {
-  color: var(--gray-0);
+.footer *,
+.footer a {
+  color: $gray-0;
 }
 
 .worktop {
@@ -79,30 +73,29 @@ header.container.padded {
 }
 
 .logo1 {
-  color: var(--indigo-9);
+  color: $indigo-9;
   font-size: 110%;
 }
 
 .logo2 {
-  color: var(--pink-9);
+  color: $pink-9;
 }
 
 .team .card {
-  grid-template-rows: 16em 1fr var(--footer-height);
+  grid-template-rows: 16em 1fr $footer-height;
 }
 
 .pointy {
   content: "";
   margin: auto;
-  --pointy-height: 1em;
+  $pointy-height: 1em !default;
   box-sizing: border-box;
   height: 0;
   width: 0;
-  border: calc(var(--pointy-height)/1) solid transparent;
+  border: calc($pointy-height / 1) solid transparent;
   border-bottom: 0;
-  border-top: var(--pointy-height) solid var(--gray-2);
+  border-top: $pointy-height solid $gray-2;
 }
-
 
 /* https://wweb.dev/resources/css-separator-generator */
 
@@ -134,7 +127,7 @@ header.container.padded {
 }
 
 .triangled::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 0;
   width: 0;

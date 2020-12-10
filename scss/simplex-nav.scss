@@ -1,10 +1,10 @@
-:root {
-  --nav-bg-color: var(--main-bg-color);
-  --nav-fg-color: var(--black-0);
-  --nav-link-color: var(--blue-9);
-  --nav-active-color: var(--blue-9);
-  --nav-button-color: var(--main-bg-color);
-}
+@import "./simplex-variables.scss";
+
+$nav-bg-color: $main-bg-color !default;
+$nav-fg-color: $black-0 !default;
+$nav-link-color: $blue-9 !default;
+$nav-active-color: $blue-9 !default;
+$nav-button-color: $main-bg-color !default;
 
 .navbar {
   line-height: normal; /* undo bootsrap */
@@ -16,7 +16,7 @@
   grid-template-areas: "title left right";
   /*align-items: center;*/
   padding: 0;
-  color: var(--nav-fg-color);
+  color: $nav-fg-color;
 }
 
 .navbar > * {
@@ -57,7 +57,7 @@
 .nav a,
 .navbar a:not(.title),
 .navbar .button {
-  color: var(--nav-fg-color);
+  color: $nav-fg-color;
 }
 
 .navbar .button {
@@ -68,8 +68,8 @@
 .navbar .button,
 .nav a:hover,
 .navbar a:hover {
-  color: var(--nav-link-color);
-  background: var(--nav-bg-color);
+  color: $nav-link-color;
+  background: $nav-bg-color;
 }
 
 .nav *,
@@ -99,8 +99,8 @@
   }
   .navbar .left > *.active,
   .navbar .left > *:active {
-    border-bottom: 3px solid var(--nav-link-color);
-    color: var(--nav-link-color);
+    border-bottom: 3px solid $nav-link-color;
+    color: $nav-link-color;
   }
   .navbar .absolute {
     position: absolute;
@@ -111,8 +111,8 @@
     margin-top: 1.5rem;
     left: -1rem;
     z-index: 2;
-    background: var(--nav-bg-color);
-    border: solid thin var(--nav-fg-color);
+    background: $nav-bg-color;
+    border: solid thin $nav-fg-color;
     border-radius: 0.5em;
   }
   .navbar .below.left5 {
@@ -172,7 +172,7 @@
   }
   .navbar .left > *.active,
   .navbar .left > *:active {
-    color: var(--nav-link-color);
+    color: $nav-link-color;
   }
   .navbar .below *:before {
     content: "\00a0·\00a0";
