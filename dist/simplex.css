@@ -1,4 +1,5 @@
 @charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 h1,
 h2,
 h3,
@@ -537,6 +538,251 @@ blockquote p {
 }
 
 */
+/* CARDS */
+/* IE only */
+@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .deck {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .deck > div {
+    width: 15rem;
+    margin-bottom: calc(2 * $spacer);
+  }
+
+  .deck .figure img {
+    max-width: calc($card-default-width * 5 / 6);
+  }
+}
+/* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
+@supports (display: grid) {
+  .deck {
+    /* autoprefixer: off */
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-gap: calc(2 * $spacer);
+  }
+}
+/* Main CSS */
+.card {
+  box-sizing: border-box;
+  color: #394049;
+  background-color: #e9eef4;
+  padding: 0;
+  margin: 0;
+  display: grid;
+}
+
+/* experimental
+
+.card.landscape {
+  grid-template-columns: calc(1.42 * $header-height) auto;
+  grid-template-areas: "head body" "head foot";
+}
+
+*/
+.card:not(.landscape) {
+  grid-template-rows: 8em 1fr 3em;
+  grid-template-columns: 1fr;
+  /* needed ? */
+  grid-template-areas: "head" "body" "foot";
+}
+
+.card .header,
+.card .footer {
+  background-color: #9eb5d1;
+  margin: 0.5em;
+  padding: 0.5em;
+}
+
+.card .header {
+  grid-area: head;
+}
+
+.card .header.figure {
+  padding: 0;
+  background-color: #e9eef4;
+}
+
+.card .body {
+  grid-area: body;
+  margin: 0 0.5em;
+  padding: 0 0.5em;
+}
+
+.card .footer {
+  grid-area: foot;
+}
+
+.card .body p.demo:after {
+  content: "card demo content blurb blurb blurb blurby blurb djhfjdgfhg fdjhfkjhdfj kjhfdhdfdkj";
+}
+
+/* MEDIA */
+.media {
+  display: flex;
+  align-items: flex-start;
+  /* IE11 !? */
+  flex-wrap: wrap;
+}
+
+.media + .media {
+  margin-top: calc(2 * $spacer);
+}
+
+.media.flipped {
+  flex-direction: row-reverse;
+}
+
+.media .figure {
+  margin: 0.5em;
+  max-width: 300px;
+}
+
+.media .figure img {
+  max-width: 300px;
+}
+
+.media .content {
+  flex: 1;
+  min-width: 300px;
+}
+
+.media .content *:first {
+  margin-top: 0;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Noto Sans", sans-serif;
+}
+
+body {
+  color: #394049;
+  background-color: #f9f9fc;
+  margin: 0;
+}
+
+.app {
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+
+.padded {
+  padding: 1rem;
+}
+
+.container.padded {
+  padding: 2rem;
+}
+
+header.container.padded {
+  padding-top: 1rem;
+  padding-bottom: 0;
+}
+
+.shaded {
+  background: #e0e1e2;
+}
+
+.banner {
+  background: linear-gradient(45deg, #003c86, #688cb7);
+}
+
+.banner,
+.banner * {
+  color: #f9f9fc;
+}
+
+.footer {
+  margin-top: 2em;
+  background-color: #394049;
+}
+
+.footer *,
+.footer a {
+  color: #f9f9fa;
+}
+
+.worktop {
+  background-image: url("https://source.unsplash.com/Im7lZjxeLhg/640x453");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.logo1 {
+  color: #332d9c;
+  font-size: 110%;
+}
+
+.logo2 {
+  color: #81003a;
+}
+
+.team .card {
+  grid-template-rows: 16em 1fr 3em;
+}
+
+.pointy {
+  content: "";
+  margin: auto;
+  box-sizing: border-box;
+  height: 0;
+  width: 0;
+  border: calc($pointy-height / 1) solid transparent;
+  border-bottom: 0;
+  border-top: 1em solid #e0e1e2;
+}
+
+/* https://wweb.dev/resources/css-separator-generator */
+/*
+<section>
+  <div class="skewed"></div>
+</section>
+*/
+.skewed {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  width: 100%;
+  height: 20em;
+  background: #2c3e50;
+  z-index: -1;
+  transform: skewY(-8deg);
+  transform-origin: top left;
+}
+
+/* <section class="triangle"></section> */
+.triangled {
+  position: relative;
+  background: #2c3e50;
+  height: 50vh;
+}
+
+.triangled::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 20px 20px 0 20px;
+  border-color: #2c3e50 transparent transparent transparent;
+  left: 50%;
+  transform: translateX(-50%) translateY(100%);
+}
+
 /*
 @import '../node_modules/mq-scss/mq';
 @import '../node_modules/gutter-grid/grid-classes';

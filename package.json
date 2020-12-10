@@ -2,7 +2,7 @@
   "name": "simplecss",
   "version": "0.1.1",
   "description": "Simple CSS",
-  "main": "dist/styles.css",
+  "main": "dist/simplex.css",
   "files": [
     "dist",
     "scss"
