@@ -1,12 +1,12 @@
-@import "./simplex-variables.scss";
-@import "./simplex-typography.scss";
-@import "./simplex-button.scss";
-@import "./simplex-forms.scss";
-@import "./simplex-utils.scss";
-@import "./simplex-deck.scss";
-@import "./simplex-nav.scss";
-@import "./simplex-consent.scss";
-@import "./simplex-markdown.scss";
+@import "./_variables.scss";
+@import "./typography.scss";
+@import "./button.scss";
+@import "./forms.scss";
+@import "./utils.scss";
+@import "./deck.scss";
+@import "./nav.scss";
+@import "./consent.scss";
+@import "./markdown.scss";
 
 /*
 @import '../node_modules/mq-scss/mq';
