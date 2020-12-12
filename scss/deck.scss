@@ -1,17 +1,6 @@
-@import "./_variables.scss";
+@import "variables.scss";
 
-/* CARDS */
-
-$card-min-width: 15rem !default;
-$card-default-width: 15rem !default;
-$card-header-color: $blue-5 !default;
-$card-fg-color: $main-fg-color !default;
-$card-bg-color: $blue-1 !default;
-$header-height: 8em !default;
-$footer-height: 3em !default;
-$figure-width: 300px !default;
-
-/* IE only */
+// IE only
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .deck {
     display: flex;
@@ -21,25 +10,24 @@ $figure-width: 300px !default;
 
   .deck > div {
     width: $card-default-width;
-    margin-bottom: calc(2 * $spacer);
+    margin-bottom: 2 * $spacer;
   }
 
   .deck .figure img {
-    max-width: calc($card-default-width * 5 / 6);
+    max-width: $card-default-width * 5 / 6;
   }
 }
-//
-/* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
+// Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports)
 @supports (display: grid) {
   .deck {
     /* autoprefixer: off */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax($card-min-width, 1fr));
-    grid-gap: calc(2 * $spacer);
+    grid-gap: 2 * $spacer;
   }
 }
 
-/* Main CSS */
+// Main CSS
 
 .card {
   box-sizing: border-box;
@@ -53,13 +41,13 @@ $figure-width: 300px !default;
 /* experimental
 
 .card.landscape {
-  grid-template-columns: calc(1.42 * $header-height) auto;
+  grid-template-columns: (1.42 * $card-header-height) auto;
   grid-template-areas: "head body" "head foot";
 }
 
 */
 .card:not(.landscape) {
-  grid-template-rows: $header-height 1fr $footer-height;
+  grid-template-rows: $card-header-height 1fr $card-footer-height;
   grid-template-columns: 1fr; /* needed ? */
   grid-template-areas:
     "head"
@@ -97,7 +85,7 @@ $figure-width: 300px !default;
   content: "card demo content blurb blurb blurb blurby blurb djhfjdgfhg fdjhfkjhdfj kjhfdhdfdkj";
 }
 
-/* MEDIA */
+// MEDIA
 
 .media {
   display: flex;
@@ -115,16 +103,16 @@ $figure-width: 300px !default;
 
 .media .figure {
   margin: $spacer;
-  max-width: $figure-width;
+  max-width: $media-figure-width;
 }
 
 .media .figure img {
-  max-width: $figure-width;
+  max-width: $media-figure-width;
 }
 
 .media .content {
   flex: 1;
-  min-width: $figure-width;
+  min-width: $media-figure-width;
 }
 
 .media .content *:first {

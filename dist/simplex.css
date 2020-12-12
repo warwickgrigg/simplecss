@@ -192,8 +192,6 @@ input[type=checkbox] {
   background: red;
 }
 
-/* CARDS */
-/* IE only */
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .deck {
     display: flex;
@@ -203,23 +201,21 @@ input[type=checkbox] {
 
   .deck > div {
     width: 15rem;
-    margin-bottom: calc(2 * $spacer);
+    margin-bottom: 1em;
   }
 
   .deck .figure img {
-    max-width: calc($card-default-width * 5 / 6);
+    max-width: 12.5rem;
   }
 }
-/* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
 @supports (display: grid) {
   .deck {
     /* autoprefixer: off */
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    grid-gap: calc(2 * $spacer);
+    grid-gap: 1em;
   }
 }
-/* Main CSS */
 .card {
   box-sizing: border-box;
   color: #394049;
@@ -232,7 +228,7 @@ input[type=checkbox] {
 /* experimental
 
 .card.landscape {
-  grid-template-columns: calc(1.42 * $header-height) auto;
+  grid-template-columns: (1.42 * $card-header-height) auto;
   grid-template-areas: "head body" "head foot";
 }
 
@@ -274,7 +270,6 @@ input[type=checkbox] {
   content: "card demo content blurb blurb blurb blurby blurb djhfjdgfhg fdjhfkjhdfj kjhfdhdfdkj";
 }
 
-/* MEDIA */
 .media {
   display: flex;
   align-items: flex-start;
@@ -538,122 +533,6 @@ blockquote p {
 }
 
 */
-/* CARDS */
-/* IE only */
-@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
-  .deck {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-  }
-
-  .deck > div {
-    width: 15rem;
-    margin-bottom: calc(2 * $spacer);
-  }
-
-  .deck .figure img {
-    max-width: calc($card-default-width * 5 / 6);
-  }
-}
-/* Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports) */
-@supports (display: grid) {
-  .deck {
-    /* autoprefixer: off */
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
-    grid-gap: calc(2 * $spacer);
-  }
-}
-/* Main CSS */
-.card {
-  box-sizing: border-box;
-  color: #394049;
-  background-color: #e9eef4;
-  padding: 0;
-  margin: 0;
-  display: grid;
-}
-
-/* experimental
-
-.card.landscape {
-  grid-template-columns: calc(1.42 * $header-height) auto;
-  grid-template-areas: "head body" "head foot";
-}
-
-*/
-.card:not(.landscape) {
-  grid-template-rows: 8em 1fr 3em;
-  grid-template-columns: 1fr;
-  /* needed ? */
-  grid-template-areas: "head" "body" "foot";
-}
-
-.card .header,
-.card .footer {
-  background-color: #9eb5d1;
-  margin: 0.5em;
-  padding: 0.5em;
-}
-
-.card .header {
-  grid-area: head;
-}
-
-.card .header.figure {
-  padding: 0;
-  background-color: #e9eef4;
-}
-
-.card .body {
-  grid-area: body;
-  margin: 0 0.5em;
-  padding: 0 0.5em;
-}
-
-.card .footer {
-  grid-area: foot;
-}
-
-.card .body p.demo:after {
-  content: "card demo content blurb blurb blurb blurby blurb djhfjdgfhg fdjhfkjhdfj kjhfdhdfdkj";
-}
-
-/* MEDIA */
-.media {
-  display: flex;
-  align-items: flex-start;
-  /* IE11 !? */
-  flex-wrap: wrap;
-}
-
-.media + .media {
-  margin-top: calc(2 * $spacer);
-}
-
-.media.flipped {
-  flex-direction: row-reverse;
-}
-
-.media .figure {
-  margin: 0.5em;
-  max-width: 300px;
-}
-
-.media .figure img {
-  max-width: 300px;
-}
-
-.media .content {
-  flex: 1;
-  min-width: 300px;
-}
-
-.media .content *:first {
-  margin-top: 0;
-}
-
 * {
   box-sizing: border-box;
 }
@@ -738,7 +617,7 @@ header.container.padded {
   box-sizing: border-box;
   height: 0;
   width: 0;
-  border: calc($pointy-height / 1) solid transparent;
+  border: 1em solid transparent;
   border-bottom: 0;
   border-top: 1em solid #e0e1e2;
 }

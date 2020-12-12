@@ -1,5 +1,17 @@
-@import "./_palette.scss";
+@import "palette.scss";
+
 $dark-color: $blue-9 !default;
 $main-bg-color: $indigo-0 !default;
 $main-fg-color: $black-0 !default;
 $spacer: 0.5em !default;
+
+// Deck
+
+$card-min-width: 15rem !default;
+$card-default-width: 15rem !default;
+$card-header-color: $blue-5 !default;
+$card-fg-color: $main-fg-color !default;
+$card-bg-color: $blue-1 !default;
+$card-header-height: 8em !default;
+$card-footer-height: 3em !default;
+$media-figure-width: 300px !default;

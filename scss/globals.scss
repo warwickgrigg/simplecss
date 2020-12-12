@@ -1,5 +1,4 @@
 @import "./_variables.scss";
-@import "./deck.scss";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap");
 
 * {
@@ -82,7 +81,7 @@ header.container.padded {
 }
 
 .team .card {
-  grid-template-rows: 16em 1fr $footer-height;
+  grid-template-rows: 16em 1fr $card-footer-height;
 }
 
 .pointy {
@@ -92,7 +91,7 @@ header.container.padded {
   box-sizing: border-box;
   height: 0;
   width: 0;
-  border: calc($pointy-height / 1) solid transparent;
+  border: ($pointy-height / 1) solid transparent;
   border-bottom: 0;
   border-top: $pointy-height solid $gray-2;
 }
