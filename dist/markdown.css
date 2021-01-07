@@ -1,14 +1,10 @@
-/* adaptations for markdown-to-css */
-/*
-
-blockquote p {
-  display: block;
-  margin-block-start: 1em;
-  margin-block-end: 1em;
-  margin-inline-start: 40px;
-  margin-inline-end: 40px;
-}
-
-*/
+/* adaptations for markdowntocss */
+/* blockquote p
+ * display: block
+ * margin-block-start: 1em
+ * margin-block-end: 1em
+ * margin-inline-start: 40px
+ * margin-inline-end: 40px
+ * */
 
 /*# sourceMappingURL=markdown.css.map */

@@ -1,0 +1,92 @@
+@import "variables.scss"
+
+// IE only
+@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none)
+  .deck
+    display: flex
+    flex-wrap: wrap
+    justify-content: space-between
+
+  .deck > div
+    width: $card-default-width
+    margin-bottom: 2 * $spacer
+
+  .deck .figure img
+    max-width: $card-default-width * 5 / 6
+
+// Modern browsers (eg. Chrome, FF, Edge) not IE. (All versions of IE ignore @supports)
+@supports (display: grid)
+  .deck
+    /* autoprefixer: off */
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax($card-min-width, 1fr))
+    grid-gap: 2 * $spacer
+
+// Main CSS
+
+.card
+  /* autoprefixer grid: autoplace */
+  box-sizing: border-box
+  color: $card-fg-color
+  background-color: $card-bg-color
+  padding: 0
+  margin: 0
+  display: grid
+  grid-template-columns: 1fr
+  grid-template-rows: $card-header-height 1fr $card-footer-height
+  grid-template-areas: "head" "body" "foot"
+
+  .header,
+  .card .footer
+    background-color: $card-header-color
+    margin: $spacer
+    padding: $spacer
+
+  .header
+    grid-area: head
+
+  .header.figure
+    padding: 0
+    background-color: $card-bg-color
+
+  .body
+    grid-area: body
+    margin: 0 $spacer
+    padding: 0 $spacer
+
+  .footer
+    grid-area: foot
+
+  .body p.demo:after
+    content: "card demo content blurb blurb blurb blurby blurb djhfjdgfhg fdjhfkjhdfj kjhfdhdfdkj"
+
+// .card.landscape
+//   grid-template-columns: (1.42 * $card-header-height) auto
+//  grid-template-areas: "head body" "head foot"
+
+// MEDIA
+
+.media
+  display: flex
+  align-items: flex-start // IE11 !?
+  flex-wrap: wrap
+
+.media + .media
+  margin-top: calc(2 * $spacer)
+
+.media.flipped
+  flex-direction: row-reverse
+
+.media .figure
+  margin: $spacer
+  max-width: $media-figure-width
+
+.media .figure img
+  max-width: $media-figure-width
+
+.media .content
+  flex: 1
+  min-width: $media-figure-width
+
+.media .content *:first
+  margin-top: 0

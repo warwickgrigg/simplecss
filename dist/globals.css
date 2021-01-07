@@ -73,10 +73,9 @@ header.container.padded {
   color: #81003a;
 }
 
-.team .card {
-  grid-template-rows: 16em 1fr 3em;
-}
-
+/* .team .card
+ * grid-template-rows: 16em 1fr $card-footer-height
+ * */
 .pointy {
   content: "";
   margin: auto;
@@ -89,11 +88,7 @@ header.container.padded {
 }
 
 /* https://wweb.dev/resources/css-separator-generator */
-/*
-<section>
-  <div class="skewed"></div>
-</section>
-*/
+/* <section> <div class="skewed"></div> </section> */
 .skewed {
   position: absolute;
   top: 0;

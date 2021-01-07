@@ -19,7 +19,6 @@
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
   .figure img {
     min-width: 1px;
-    /* IE hack */
   }
 }
 .center {
@@ -29,7 +28,7 @@
 }
 
 .bordered {
-  /*border-color: darkgray; */
+  /*border-color: darkgray */
   border-width: thin;
   border-style: solid;
 }
