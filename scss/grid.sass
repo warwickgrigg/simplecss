@@ -1,0 +1,51 @@
+@import "variables.scss"
+
+$grid-min: 20rem
+
+\:root
+  --grid-min: #{$grid-min}
+  --spacer: #{$spacer}
+
+// Inspired by https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/
+
+// Modern grid (.grid) with fallback for IE11
+
+@supports (display: grid) // Modern CSS (eg. Chrome, FF, Edge) not IE 10/11
+  .grid
+    /* autoprefixer grid: off */
+    display: grid
+    grid-gap: calc(2 * var(--spacer))
+    grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr))
+
+// Flex grid (.flexgrid). On IE11 .grid will fallback to this.
+
+@mixin flexgrid()  
+  display: flex
+  flex-wrap: wrap
+  margin: calc(2 * var(--spacer)) calc( -1 * var(--spacer) ) !important
+
+  // default is "pancake" break (refer to link)
+
+  > *
+    flex-shrink: 1
+    flex-grow: 1
+    flex-basis: var(--grid-min)
+    margin: var(--spacer)
+  
+  // "albatross" break (refer to link)
+
+  &.albatross > *
+    flex-basis: calc((var(--grid-min)  - 100%) * 999)
+
+@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
+  .grid
+    @include flexgrid()
+
+.flexgrid
+  @include flexgrid()
+
+.flex--auto 
+  flex: 0 1 auto
+
+.flex
+  display: flex
