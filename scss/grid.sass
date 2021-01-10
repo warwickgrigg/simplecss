@@ -1,3 +1,7 @@
+// Modern container responsive grid (.grid) with .flexgrid fallback for IE11
+
+// Inspired by https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/
+
 @import "variables.scss"
 
 $grid-min: 20rem
@@ -5,16 +9,15 @@ $grid-min: 20rem
 \:root
   --grid-min: #{$grid-min}
   --spacer: #{$spacer}
+  --grid-gap: #{2 * $spacer}
 
-// Inspired by https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/
+// Modern CSS grid (.grid), eg. for Chrome, FF, Edge  not IE 10/11
 
-// Modern grid (.grid) with fallback for IE11
-
-@supports (display: grid) // Modern CSS (eg. Chrome, FF, Edge) not IE 10/11
+@supports (display: grid) 
   .grid
     /* autoprefixer grid: off */
     display: grid
-    grid-gap: calc(2 * var(--spacer))
+    grid-gap: var(--grid-gap)
     grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr))
 
 // Flex grid (.flexgrid). On IE11 .grid will fallback to this.
@@ -22,7 +25,8 @@ $grid-min: 20rem
 @mixin flexgrid()  
   display: flex
   flex-wrap: wrap
-  margin: calc(2 * var(--spacer)) calc( -1 * var(--spacer) ) !important
+  margin-left: calc(var(--grid-gap) / -2 ) !important // counteract item margin
+  margin-right: calc(var(--grid-gap) / -2 ) !important // counteract item margin
 
   // default is "pancake" break (refer to link)
 
@@ -30,7 +34,7 @@ $grid-min: 20rem
     flex-shrink: 1
     flex-grow: 1
     flex-basis: var(--grid-min)
-    margin: var(--spacer)
+    margin: calc(var(--grid-gap) / 2 ) // simulated grid gap
   
   // "albatross" break (refer to link)
 
