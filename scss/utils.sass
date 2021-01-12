@@ -2,7 +2,7 @@
 
 // UTILITY CLASSES
 
-// This section is taking inspiration from https://moderncss.dev/
+// This subsection inspired by https://moderncss.dev/
 
 .center
   display: flex
@@ -10,54 +10,106 @@
   justify-content: center
   align-items: center
 
+.center1
+  display: flex
+  > *
+    margin: auto
+
+// atomic
+
 .flex
   display: flex
 
-.mauto  // flex.mauto. to center a single child element
-  margin: auto
+.column
+  flex-direction: column
 
-//
+.row
+  flex-direction: row
 
+.justified
+  justify-content: space-between
+
+// .flex-initial	
+//   flex: 0 1 auto
+// .flex-auto	
+//   flex: 1 1 auto // just use .grow
+
+.flex-1	
+  flex: 1 1 0%
+.flex-none	
+  flex: none
+.grow
+  flex-grow: 1
+.grow-0
+  flex-grow: 0
+.shrink
+  flex-shrink: 1
+.shrink-0
+  flex-shrink: 0
+
+.m-auto
+  margin: auto !important
 .m-0
   margin: 0 !important
 .m-1
   margin: $spacer !important
 .m-2
   margin: 2 * $spacer !important
+.m-4
+  margin: 4 * $spacer !important
 .p-0
   padding: 0 !important
 .p-1
   padding: $spacer !important
 .p-2
   padding: 2 * $spacer !important
-.w-100
+.p-4
+  padding: 4 * $spacer !important
+.h-0
+  height: 0 !important
+.h-1
+  height: $spacer !important
+.h-2
+  height: 2 * $spacer !important
+.h-4
+  height: 4 * $spacer !important
+.h-full
+  height: 100% !important
+.w-0
+  width: 0 !important
+.w-1
+  width: $spacer !important
+.w-2
+  width: 2 * $spacer !important
+.w-4
+  width: 4 * $spacer !important
+.w-full
   width: 100% !important
-.mw-100
+
+.mw-full
   max-width: 100% !important
 
-.row
-  display: flex
-  flex-flow: row wrap
-  justify-content: space-between
+// Aspect ratios
 
-.column
-  display: flex
-  flex-flow: column nowrap
+.square
+  padding-bottom: 100% !important
+.landscape
+  padding-bottom: #{100% * 5 / 8} !important
+.portrait
+  padding-bottom: #{100% * 5 / 8 + 100%} !important
+
+.back-white
+  background-color: white
+
+.cover
+  background-size: cover
+  background-position: center // center
 
 .figure img
   max-width: 100%
   max-height: 100%
   @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none)  /* IE only */
     min-width: 1px /* IE hack */
-
-.cover
-  background-size: cover
-  background-position: center // center
-  padding-bottom: 62.5%
-  &.square, &.circle
-    padding-bottom: 100%
-  &.portrait
-    padding-bottom: 162.5%
 
 .shadow
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15)
@@ -76,5 +128,14 @@
 .debug
   background: red
 
+.outline
+  outline: 1px solid
 
+ul.plain
+  list-style: none 
+  margin: 0
+  padding: 0
+  > li
+    margin: 0
+    padding: 0
 

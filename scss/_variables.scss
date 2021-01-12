@@ -15,3 +15,7 @@ $card-bg-color: $blue-1 !default;
 $card-header-height: 8em !default;
 $card-footer-height: 3em !default;
 $media-figure-width: 300px !default;
+
+\:root {
+  --spacer: #{$spacer};
+}

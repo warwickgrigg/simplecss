@@ -11,16 +11,15 @@ $grid-min: 20rem
   --spacer: #{$spacer}
   --grid-gap: #{2 * $spacer}
 
-// Modern CSS grid (.grid), eg. for Chrome, FF, Edge  not IE 10/11
+// .grid for modern CSS browsers eg. for Chrome, FF, Edge  not IE 10/11
 
-@supports (display: grid) 
-  .grid
+@mixin grid()
     /* autoprefixer grid: off */
     display: grid
     grid-gap: var(--grid-gap)
     grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr))
 
-// Flex grid (.flexgrid). On IE11 .grid will fallback to this.
+// .grid for older browsers eg. IE11
 
 @mixin flexgrid()  
   display: flex
@@ -41,15 +40,18 @@ $grid-min: 20rem
   &.albatross > *
     flex-basis: calc((var(--grid-min)  - 100%) * 999)
 
-@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
-  .grid
+.grid
+  @supports (display: grid)
+    &:not(.flex)
+      @include grid()
+  @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
+    @include flexgrid()
+  &.flex // force flex version of .grid
     @include flexgrid()
 
+// .flex.grid, same as .grid.flex
 .flexgrid
   @include flexgrid()
 
-.flex--auto 
+.flex--auto // refer to linked article for description
   flex: 0 1 auto
-
-.flex
-  display: flex
