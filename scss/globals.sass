@@ -1,10 +1,15 @@
 @import "./_variables.scss"
 
+$body-fg-color: $main-fg-color !default
+$body-bg-color: $main-bg-color !default
+
+\:root
+  --body-fg-color: $body-fg-color !default
+  --body-bg-color: $body-bg-color !default
+
 body
-  $body-fg-color: $main-fg-color !default
-  $body-bg-color: $main-bg-color !default
-  color: $body-fg-color
-  background-color: $body-bg-color
+  color: var(--body-fg-color)
+  background-color: var(--body-bg-color)
 
 .container
   max-width: 1200px

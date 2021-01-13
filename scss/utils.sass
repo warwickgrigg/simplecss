@@ -2,7 +2,7 @@
 
 // UTILITY CLASSES
 
-// This subsection inspired by https://moderncss.dev/
+// Center - taking inspiration by https://moderncss.dev/
 
 .center
   display: flex
@@ -10,12 +10,18 @@
   justify-content: center
   align-items: center
 
-.center1
-  display: flex
-  > *
-    margin: auto
+// .center1  // more simply .flex > .m-auto
+//   display: flex
+//   > *
+//     margin: auto
 
-// atomic
+// Atomic - taking inspiration from tailwind
+
+.absolute
+  position: absolute
+
+.relative
+  position: relative
 
 .flex
   display: flex
@@ -30,7 +36,7 @@
   justify-content: space-between
 
 // .flex-initial	
-//   flex: 0 1 auto
+//   flex: 0 1 auto // default values for flex item
 // .flex-auto	
 //   flex: 1 1 auto // just use .grow
 
@@ -38,51 +44,54 @@
   flex: 1 1 0%
 .flex-none	
   flex: none
-.grow
-  flex-grow: 1
-.grow-0
-  flex-grow: 0
-.shrink
-  flex-shrink: 1
-.shrink-0
-  flex-shrink: 0
+.flex
+  .basis-auto
+    flex-basis: auto
+  .grow
+    flex-grow: 1
+  .grow-0
+    flex-grow: 0 !important
+  .shrink
+    flex-shrink: 1
+  .shrink-0
+    flex-shrink: 0
 
 .m-auto
   margin: auto !important
 .m-0
   margin: 0 !important
 .m-1
-  margin: $spacer !important
+  margin: var(--spacer) !important
 .m-2
-  margin: 2 * $spacer !important
+  margin: calc(2 * var(--spacer)) !important
 .m-4
-  margin: 4 * $spacer !important
+  margin: calc(4 * var(--spacer)) !important
 .p-0
   padding: 0 !important
 .p-1
-  padding: $spacer !important
+  padding: var(--spacer) !important
 .p-2
-  padding: 2 * $spacer !important
+  padding: calc(2 * var(--spacer)) !important
 .p-4
-  padding: 4 * $spacer !important
+  padding: calc(4 * var(--spacer)) !important
 .h-0
   height: 0 !important
 .h-1
-  height: $spacer !important
+  height: var(--spacer) !important
 .h-2
-  height: 2 * $spacer !important
+  height: calc(2 * var(--spacer)) !important
 .h-4
-  height: 4 * $spacer !important
+  height: calc(4 * var(--spacer)) !important
 .h-full
   height: 100% !important
 .w-0
   width: 0 !important
 .w-1
-  width: $spacer !important
+  width: var(--spacer) !important
 .w-2
-  width: 2 * $spacer !important
+  width: calc(2 * var(--spacer)) !important
 .w-4
-  width: 4 * $spacer !important
+  width: calc(4 * var(--spacer)) !important
 .w-full
   width: 100% !important
 
@@ -120,7 +129,7 @@
   border-style: solid
 
 .rounded
-  border-radius: $spacer
+  border-radius: var(--spacer)
 
 .elliptic // circular if width = height
   border-radius: 50%

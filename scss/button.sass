@@ -4,10 +4,15 @@ $button-bg-color: $blue-8 !default
 $button-fg-color: $indigo-0 !default
 $button-bg-color-hover: $indigo-9 !default
 
+\:root
+  --button-bg-color: #{$button-bg-color}
+  --button-fg-color: #{$button-fg-color}
+  --button-bg-color-hover: #{$button-bg-color-hover}
+
 button,
 .button
-  color: $button-fg-color
-  background-color: $button-bg-color
+  color: var(--button-fg-color)
+  background-color: var(--button-bg-color)
   border: none
   font-size: 0.833rem
   padding: 1em 1.5em
@@ -17,9 +22,9 @@ button,
   margin: 0
 
 .button.inverted
-  background-color: $button-fg-color
-  color: $button-bg-color
-  border: thin solid $button-bg-color
+  background-color: var(--button-fg-color)
+  color: var(--button-bg-color)
+  border: thin solid var(--button-bg-color)
   border-radius: 0.25em
 
 .bg-clear
@@ -27,5 +32,5 @@ button,
 
 .button:hover,
 .button:focus
-  color: $button-fg-color
-  background-color: $button-bg-color-hover
+  color: var(--button-fg-color)
+  background-color: var(--button-bg-color-hover)

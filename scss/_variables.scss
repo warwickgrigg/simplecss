@@ -1,9 +1,10 @@
 @import "palette.scss";
 
+$spacer: 0.5rem !default;
+
 $dark-color: $blue-9 !default;
 $main-bg-color: $indigo-0 !default;
 $main-fg-color: $black-0 !default;
-$spacer: 0.5rem !default;
 
 // Deck
 
@@ -18,4 +19,17 @@ $media-figure-width: 300px !default;
 
 \:root {
   --spacer: #{$spacer};
+
+  --dark-color: #{$dark-color};
+  --main-bg-color: #{$main-bg-color};
+  --main-fg-color: #{$main-fg-color};
+
+  --card-min-width: #{$card-min-width};
+  --card-default-width: #{$card-default-width};
+  --card-header-color: #{$card-header-color};
+  --card-fg-color: #{$card-fg-color};
+  --card-bg-color: #{$card-bg-color};
+  --card-header-height: #{$card-header-height};
+  --card-footer-height: #{$card-footer-height};
+  --media-figure-width: #{$media-figure-width};
 }

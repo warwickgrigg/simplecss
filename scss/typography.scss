@@ -116,5 +116,5 @@ h4 {
 body {
   // Ensure base applied as default for all other elements
   font-size: $type-base-size;
-  line-height: 1.5;
+  line-height: var(--line-height);
 }
