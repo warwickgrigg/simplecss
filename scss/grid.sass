@@ -45,10 +45,11 @@ $grid-min: 20rem
       @include grid()
   @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
     @include flexgrid()
-  &.flex // force flex version of .grid
+  &.flex // flex version of .grid
     @include flexgrid()
 
 // .flex.grid, same as .grid.flex
+
 .flexgrid
   @include flexgrid()
 
