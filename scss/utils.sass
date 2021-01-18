@@ -2,6 +2,17 @@
 
 // UTILITY CLASSES
 
+$container-max-width: 1200px
+
+\:root
+  --container-max-width: $container-max-width
+
+.container
+  max-width: var(--container-max-width)
+  margin: 0 auto
+  padding: 2rem
+
+
 // Center - taking inspiration by https://moderncss.dev/
 
 .center
@@ -55,6 +66,9 @@
 
 .m-auto
   margin: auto !important //  will center flex with just one element 
+.mx-auto
+  margin-left: auto
+  margin-right: auto
 .m-0
   margin: 0 !important
 .m-1

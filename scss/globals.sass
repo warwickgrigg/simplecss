@@ -3,15 +3,12 @@
 $body-fg-color: $main-fg-color !default
 $body-bg-color: $main-bg-color !default
 
+
 \:root
-  --body-fg-color: $body-fg-color !default
-  --body-bg-color: $body-bg-color !default
+  --body-fg-color: $body-fg-color
+  --body-bg-color: $body-bg-color
+
 
 body
   color: var(--body-fg-color)
   background-color: var(--body-bg-color)
-
-.container
-  max-width: 1200px
-  margin: 0 auto
-  padding: 2rem
