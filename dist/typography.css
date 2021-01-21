@@ -1,8 +1,16 @@
-h1,
-h2,
-h3,
-h4 {
-  color: #003c86;
+\:root {
+  --spacer: 0.5rem;
+  --dark-color: #003c86;
+  --main-bg-color: #f9f9fc;
+  --main-fg-color: #394049;
+  --card-min-width: 15rem;
+  --card-default-width: 15rem;
+  --card-header-color: #9eb5d1;
+  --card-fg-color: #394049;
+  --card-bg-color: #e9eef4;
+  --card-header-height: 8em;
+  --card-footer-height: 3em;
+  --media-figure-width: 300px;
 }
 
 li {
@@ -50,7 +58,7 @@ h4 {
 
 body {
   font-size: 1.06rem;
-  line-height: 1.5;
+  line-height: var(--line-height);
 }
 
 /*# sourceMappingURL=typography.css.map */

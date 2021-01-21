@@ -1,7 +1,28 @@
+\:root {
+  --spacer: 0.5rem;
+  --dark-color: #003c86;
+  --main-bg-color: #f9f9fc;
+  --main-fg-color: #394049;
+  --card-min-width: 15rem;
+  --card-default-width: 15rem;
+  --card-header-color: #9eb5d1;
+  --card-fg-color: #394049;
+  --card-bg-color: #e9eef4;
+  --card-header-height: 8em;
+  --card-footer-height: 3em;
+  --media-figure-width: 300px;
+}
+
+:root {
+  --button-bg-color: #416ea5;
+  --button-fg-color: #f9f9fc;
+  --button-bg-color-hover: #332d9c;
+}
+
 button,
 .button {
-  color: #f9f9fc;
-  background-color: #416ea5;
+  color: var(--button-fg-color);
+  background-color: var(--button-bg-color);
   border: none;
   font-size: 0.833rem;
   padding: 1em 1.5em;
@@ -12,9 +33,9 @@ button,
 }
 
 .button.inverted {
-  background-color: #f9f9fc;
-  color: #416ea5;
-  border: thin solid #416ea5;
+  background-color: var(--button-fg-color);
+  color: var(--button-bg-color);
+  border: thin solid var(--button-bg-color);
   border-radius: 0.25em;
 }
 
@@ -24,8 +45,8 @@ button,
 
 .button:hover,
 .button:focus {
-  color: #f9f9fc;
-  background-color: #332d9c;
+  color: var(--button-fg-color);
+  background-color: var(--button-bg-color-hover);
 }
 
 /*# sourceMappingURL=button.css.map */

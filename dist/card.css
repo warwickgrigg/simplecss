@@ -13,14 +13,4 @@
   --media-figure-width: 300px;
 }
 
-:root {
-  --body-fg-color: $body-fg-color;
-  --body-bg-color: $body-bg-color;
-}
-
-body {
-  color: var(--body-fg-color);
-  background-color: var(--body-bg-color);
-}
-
-/*# sourceMappingURL=globals.css.map */
+/*# sourceMappingURL=card.css.map */

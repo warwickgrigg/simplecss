@@ -1,0 +1,36 @@
+:root {
+  --line-height: 1.5;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+}
+
+body, h1, h2, h3, h4, p, figure, blockquote, dl, dd {
+  margin: 0 0 0.65em 0;
+}
+
+body {
+  min-height: 100vh;
+}
+
+p {
+  line-height: var(--line-height);
+}
+
+img, picture {
+  max-width: 100%;
+  display: block;
+}
+
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*# sourceMappingURL=reset.css.map */
