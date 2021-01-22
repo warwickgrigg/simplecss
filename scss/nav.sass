@@ -16,26 +16,20 @@ $nav-button-color: $main-bg-color !default
   --nav-button-color: #{$nav-button-color}
 
 .navbar
-  line-height: normal // undo bootsrap
-  position: static
   box-sizing: border-box
   display: grid
   grid-template-columns: repeat(3, 1fr)
-  grid-template-rows: 2.5em auto
+  grid-template-rows: 2rem auto
   grid-template-areas: "title left right"
-  // align-items: center
-  padding: 0
+  line-height: 1 // reset
   color: var(--nav-fg-color)
 
   > *
     align-self: center
-
-  .gradient
-    background: linear-gradient(to bottom, white, lightgray)
+    outline: 1px solid red
 
   > .title
     grid-area: title
-    font-size: 3em
 
   > .burger
     grid-area: burger
@@ -182,9 +176,10 @@ $nav-button-color: $main-bg-color !default
 
 .nav a:hover
   color: var(--nav-link-color)
-  background: var(--nav-bg-color)
+  background-color: var(--nav-bg-color)
 
 .nav *
   text-decoration: none
   white-space: nowrap
 
+  
