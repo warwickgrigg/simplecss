@@ -1,8 +1,8 @@
 // Learn about how this was made:
 // @link https://moderncss.dev/css-only-accessible-dropdown-navigation-menu/
 
-$color: rebeccapurple
-$color-dark: scale-color($color, $lightness: -30%)
+$color: white // rebeccapurple
+$color-dark: black // scale-color($color, $lightness: -30%)
 
 $transition: 280ms all 120ms ease-out
 
@@ -24,9 +24,9 @@ $transition: 280ms all 120ms ease-out
   text-transform: none
 
 nav.nav
+  // position: sticky
   background-color: $color
-  padding: 0 1rem
-  position: sticky
+  //padding: 0 1rem
   top: 0
   display: flex
 
@@ -42,38 +42,39 @@ nav.nav
         text-decoration: none
         text-align: center
         display: inline-block
-        color: #fff
+        color: $color-dark // #fff
         font-size: 1.125rem
-
-        &:focus
-          outline: none
 
       > a,
       .dropdown__title
         padding: 1rem 0.5rem
-        border-top: 3px solid transparent
+        border-bottom: 3px solid transparent
         transition: $transition
 
         &:hover,
         &:focus
-          border-top-color: pink
-          color: pink
+          outline: none
+          border-bottom-color: blue // pink
+          color: blue // pink
 
 
 @mixin dropdown-show()
   .dropdown__title
-    border-top-color: pink
+    border-bottom-color: blue // pink
 
   .dropdown__menu
-    opacity: 1
     transform: rotateX(0) translateX(-50%)
     visibility: visible
+    opacity: 1
+    // z-index: 2
 
     a
       opacity: 1
+      // z-index: 2
 
   &:after
     opacity: 1
+    // z-index: 2
 
 @mixin dropdown-menu-position()
   position: absolute
@@ -83,54 +84,34 @@ nav.nav
 .dropdown
   position: relative
 
-  .dropdown__title.caret
-    display: inline-flex
-    align-items: center
-
-    &:after
-      content: ""
-      border: 0.35rem solid transparent
-      border-top-color: rgba(#fff, 0.45)
-      margin-left: 0.25em
-      transform: translateY(0.15em)
-
-  &:after
-    @include dropdown-menu-position()
-    content: ""
-    border: 0.5rem solid transparent
-    border-bottom-color: #fff
-    top: calc(100% - 1.25rem)
-    transform: translateX(-50%)
-    opacity: 0
-    will-change: opacity
-
   .dropdown__menu
     @include dropdown-menu-position()
     flex-direction: column
-    min-width: 15ch
-    top: calc(100% - 0.25rem)
+    min-width: 25ch
+    top: calc(100% + .5rem)
     transform: rotateX(-90deg) translateX(-50%)
     transform-origin: top center
     visibility: hidden
     opacity: 0.3
-    padding: 0.5em 0
+    padding: .5em 0 .5em 0
     background-color: #fff
     border-radius: 4px
-    box-shadow: 0 0.15em 0.25em rgba(black, 0.25)
+    box-shadow: 0 .1em .5em .1em rgba(black, .7)
+    //clip-path: polygon(0 10%, 40% 10%, 50% 0%, 60% 10%, 100% 10%, 100% 100%, 0 100%)
+    //filter: drop-shadow(0px .5px 1px rgba(black, 0.5))
 
     a
-      color: $color-dark
       display: block
+      color: $color-dark
+      outline: none
       padding: 0.5em
       opacity: 0
       transition: $transition
 
+      &:focus,
       &:hover
-        background-color: rgba($color, 0.15)
-
-      &:focus
-        outline: none
-        background-color: rgba($color, 0.25)
+        color: blue
+        background-color: rgba($color-dark, 0.25)
 
   &:hover,
   &.focus-within
@@ -138,42 +119,3 @@ nav.nav
 
   &:focus-within
     @include dropdown-show()
-
-.steph  
-  font-family: "Baloo 2", sans-serif
-  min-height: 100vh
-  display: grid
-  grid-template-columns: 1fr
-  grid-template-rows: auto 1fr auto
-
-  header,
-  footer
-    display: flex
-
-  header
-    background-image: url(https://images.unsplash.com/photo-1582232655383-0826ba4f1347?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=800&fit=max&ixid=eyJhcHBfaWQiOjE0NTg5fQ)
-    background-size: cover
-    background-position: center bottom
-    background-repeat: no-repeat
-    box-shadow: inset 100vw 100vh rgba($color, 0.6)
-    min-height: 40vh
-    color: #fff
-
-  main
-    padding: 1rem
-    max-width: 80ch
-    margin: 0 auto
-
-    &:focus
-      outline: none
-
-  footer
-    background-color: mintcream
-
-  h1
-    font-size: 4rem
-    text-align: center
-
-  p
-    font-size: 1.125rem
-    line-height: 1.5
