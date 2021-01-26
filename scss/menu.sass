@@ -12,6 +12,7 @@ $transition: 280ms all 120ms ease-out
     margin: 0
     padding: 0
     display: flex
+    align-items: center
 
     li
       padding: 0
@@ -29,6 +30,7 @@ nav.nav
   //padding: 0 1rem
   top: 0
   display: flex
+  align-items: center
 
   @include unstyle-lists()
 
@@ -51,11 +53,16 @@ nav.nav
         border-bottom: 3px solid transparent
         transition: $transition
 
-        &:hover,
-        &:focus
+        &:not(.noborder):hover,
+        &:not(.noborder):focus
           outline: none
           border-bottom-color: blue // pink
           color: blue // pink
+
+        svg:hover,
+        svg:focus
+          fill: blue
+          // outline: 3px solid blue
 
 
 @mixin dropdown-show()
