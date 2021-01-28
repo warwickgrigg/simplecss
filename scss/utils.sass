@@ -36,28 +36,31 @@ $container-max-width: 1200px !default
 .flex
   display: flex
 
-  .column
-    flex-direction: column
-  .row
-    flex-direction: row
-  .justified
-    justify-content: space-between
-  .flex-1	
-    flex: 1 1 0%
-  .flex-none	
-    flex: none
-  .basis-auto
-    flex-basis: auto
-  .grow
-    flex-grow: 1
-  .grow-0
-    flex-grow: 0 !important
-  .shrink
-    flex-shrink: 1
-  .shrink-0
-    flex-shrink: 0
-  .wrap
-    flex-wrap: wrap
+.flex, .grid
+  &.column
+    flex-direction: column !important
+  &.row
+    flex-direction: row !important
+  &.justified
+    justify-content: space-between !important
+  &.wrap
+    flex-wrap: wrap !important
+
+  > .flex-1	
+    flex: 1 1 0% !important
+  > .flex-none	
+    flex: none !important // flex: 0 0 auto
+  > .basis-auto
+    flex-basis: auto !important // the default value
+  > .grow
+    flex-grow: 1 !important
+  > .grow-0
+    flex-grow: 0 !important // the default value
+  > .shrink
+    flex-shrink: 1 !important // the default value
+  > .shrink-0
+    flex-shrink: 0 !important
+
   // .grid - see grid.sass
 
   // .flex-initial	
@@ -139,9 +142,6 @@ $container-max-width: 1200px !default
   @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none)  /* IE only */
     min-width: 1px /* IE hack */
 
-.shadow
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15)
-
 .bordered
   /*border-color: darkgray */
   border-width: thin
@@ -153,11 +153,19 @@ $container-max-width: 1200px !default
 .elliptic // circular if width = height
   border-radius: 50%
 
-.debug
-  background: red
+.shadow
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15)
+  //box-shadow: 0 .1em .5em .1em rgba(black, .7)
 
+.drop-shadow
+  //clip-path: polygon(0 10%, 40% 10%, 50% 0%, 60% 10%, 100% 10%, 100% 100%, 0 100%)
+  filter: drop-shadow(0 .5px 1px rgba(black, 0.5))
+  
 .outline
   outline: 1px solid
+
+.debug
+  background: red
 
 ul.plain
   list-style: none 

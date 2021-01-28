@@ -11,32 +11,26 @@ $grid-min: 20rem
   --spacer: #{$spacer}
   --grid-gap: #{2 * $spacer}
 
-// .grid for modern CSS browsers eg. for Chrome, FF, Edge  not IE 10/11
-
-@mixin grid()
+@mixin grid() // for modern browsers eg. Chrome, FF, Edge  not IE 10/11
   /* autoprefixer grid: off */
   display: grid
   grid-gap: var(--grid-gap)
   grid-template-columns: repeat(auto-fit, minmax(var(--grid-min), 1fr))
 
-// .grid for older browsers eg. IE11
-
-@mixin flexgrid()  
+@mixin flexgrid()  // .grid for older browsers eg. IE11
   display: flex
   flex-wrap: wrap
-  margin: calc(var(--grid-gap) / -2 ) !important // counteract item margin
+  // counteract item margin
+  margin: calc(var(--grid-gap) / -2 ) !important
 
-  // default is "pancake" break (refer to link)
-
-  > *
+  > *   // default is "pancake" wrapping (refer to link)
     flex-shrink: 1
     flex-grow: 1
     flex-basis: var(--grid-min)
-    margin: calc(var(--grid-gap) / 2 ) // simulated grid gap
-  
-  // "albatross" break (refer to link)
+    // simulated grid gap
+    margin: calc(var(--grid-gap) / 2 ) !important
 
-  &.albatross > *
+  &.albatross > *   // "albatross" wrapping (refer to link)
     flex-basis: calc((var(--grid-min)  - 100%) * 999)
 
 .grid
