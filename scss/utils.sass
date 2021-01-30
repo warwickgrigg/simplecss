@@ -14,14 +14,13 @@ $container-max-width: 1200px !default
 
 // Center - taking inspiration by https://moderncss.dev/
 
-.relative-center
+// .relative-center
     position: relative
     > div
       position: absolute
       top: 50%
       left: 50%
       transform: translate(-50%, -50%)
-
 
 .center
   display: flex
@@ -151,10 +150,10 @@ $container-max-width: 1200px !default
   max-width: 100%
   max-height: 100%
   @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none)  /* IE only */
-    min-width: 1px /* IE hack */
+    min-width: 1px // IE hack
 
 .bordered
-  /*border-color: darkgray */
+  // border-color: darkgray
   border-width: thin
   border-style: solid
 

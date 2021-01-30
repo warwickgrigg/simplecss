@@ -1,21 +1,5 @@
-\:root {
-  --spacer: 0.5rem;
-  --dark-color: #003c86;
-  --main-bg-color: #f9f9fc;
-  --main-fg-color: #394049;
-  --card-min-width: 15rem;
-  --card-default-width: 15rem;
-  --card-header-color: #9eb5d1;
-  --card-fg-color: #394049;
-  --card-bg-color: #e9eef4;
-  --card-header-height: 8em;
-  --card-footer-height: 3em;
-  --media-figure-width: 300px;
-}
-
 :root {
   --grid-min: 20rem;
-  --spacer: 0.5rem;
   --grid-gap: 1rem;
 }
 
@@ -37,7 +21,7 @@
     flex-shrink: 1;
     flex-grow: 1;
     flex-basis: var(--grid-min);
-    margin: calc(var(--grid-gap) / 2 );
+    margin: calc(var(--grid-gap) / 2 ) !important;
   }
   .grid.albatross > * {
     flex-basis: calc((var(--grid-min) - 100%) * 999);
@@ -52,7 +36,7 @@
   flex-shrink: 1;
   flex-grow: 1;
   flex-basis: var(--grid-min);
-  margin: calc(var(--grid-gap) / 2 );
+  margin: calc(var(--grid-gap) / 2 ) !important;
 }
 .grid.flex.albatross > * {
   flex-basis: calc((var(--grid-min) - 100%) * 999);
@@ -67,7 +51,7 @@
   flex-shrink: 1;
   flex-grow: 1;
   flex-basis: var(--grid-min);
-  margin: calc(var(--grid-gap) / 2 );
+  margin: calc(var(--grid-gap) / 2 ) !important;
 }
 .flexgrid.albatross > * {
   flex-basis: calc((var(--grid-min) - 100%) * 999);

@@ -1,18 +1,3 @@
-\:root {
-  --spacer: 0.5rem;
-  --dark-color: #003c86;
-  --main-bg-color: #f9f9fc;
-  --main-fg-color: #394049;
-  --card-min-width: 15rem;
-  --card-default-width: 15rem;
-  --card-header-color: #9eb5d1;
-  --card-fg-color: #394049;
-  --card-bg-color: #e9eef4;
-  --card-header-height: 8em;
-  --card-footer-height: 3em;
-  --media-figure-width: 300px;
-}
-
 :root {
   --container-max-width: 1200px;
 }
@@ -41,35 +26,42 @@
 .flex {
   display: flex;
 }
-.flex .column {
-  flex-direction: column;
+
+.flex.column, .grid.column {
+  flex-direction: column !important;
 }
-.flex .row {
-  flex-direction: row;
+.flex.row, .grid.row {
+  flex-direction: row !important;
 }
-.flex .justified {
-  justify-content: space-between;
+.flex.reverse, .grid.reverse {
+  flex-direction: row-reverse !important;
 }
-.flex .flex-1 {
-  flex: 1 1 0%;
+.flex.justified, .grid.justified {
+  justify-content: space-between !important;
 }
-.flex .flex-none {
-  flex: none;
+.flex.wrap, .grid.wrap {
+  flex-wrap: wrap !important;
 }
-.flex .basis-auto {
-  flex-basis: auto;
+.flex > .flex-1, .grid > .flex-1 {
+  flex: 1 1 0% !important;
 }
-.flex .grow {
-  flex-grow: 1;
+.flex > .flex-none, .grid > .flex-none {
+  flex: none !important;
 }
-.flex .grow-0 {
+.flex > .basis-auto, .grid > .basis-auto {
+  flex-basis: auto !important;
+}
+.flex > .grow, .grid > .grow {
+  flex-grow: 1 !important;
+}
+.flex > .grow-0, .grid > .grow-0 {
   flex-grow: 0 !important;
 }
-.flex .shrink {
-  flex-shrink: 1;
+.flex > .shrink, .grid > .shrink {
+  flex-shrink: 1 !important;
 }
-.flex .shrink-0 {
-  flex-shrink: 0;
+.flex > .shrink-0, .grid > .shrink-0 {
+  flex-shrink: 0 !important;
 }
 
 .m-auto {
@@ -157,6 +149,10 @@
   max-width: 100% !important;
 }
 
+.td-none {
+  text-decoration: none;
+}
+
 .square {
   padding-bottom: 100% !important;
 }
@@ -193,12 +189,7 @@
   }
 }
 
-.shadow {
-  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
-}
-
 .bordered {
-  /*border-color: darkgray */
   border-width: thin;
   border-style: solid;
 }
@@ -211,12 +202,20 @@
   border-radius: 50%;
 }
 
-.debug {
-  background: red;
+.shadow {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.15);
+}
+
+.drop-shadow {
+  filter: drop-shadow(0 0.5px 1px rgba(0, 0, 0, 0.5));
 }
 
 .outline {
   outline: 1px solid;
+}
+
+.debug {
+  background: red;
 }
 
 ul.plain {

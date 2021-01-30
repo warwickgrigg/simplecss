@@ -1,4 +1,5 @@
 @import "./_variables.scss";
+@import "./properties.scss";
 @import "./typography.scss";
 @import "./reset.sass";
 @import "./button.sass";
@@ -9,10 +10,8 @@
 @import "./nav.sass";
 @import "./consent.sass";
 @import "./markdown.sass";
-@import "./images.sass";
+// @import "./images.sass";
 @import "./globals.sass";
 
-/*
-@import '../node_modules/mq-scss/mq';
-@import '../node_modules/gutter-grid/grid-classes';
-*/
+// @import '../node_modules/mq-scss/mq';
+// @import '../node_modules/gutter-grid/grid-classes';
