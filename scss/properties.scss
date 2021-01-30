@@ -1,9 +1,7 @@
 @import "palette.scss";
 @import "variables.scss";
 
-\:root {
-  --spacer: #{$spacer};
-
+:root {
   --dark-color: #{$dark-color};
   --main-bg-color: #{$main-bg-color};
   --main-fg-color: #{$main-fg-color};

@@ -27,33 +27,19 @@
     flex-basis: calc((var(--grid-min) - 100%) * 999);
   }
 }
-.grid.flex {
-  display: flex;
-  flex-wrap: wrap;
-  margin: calc(var(--grid-gap) / -2 ) !important;
-}
-.grid.flex > * {
-  flex-shrink: 1;
-  flex-grow: 1;
-  flex-basis: var(--grid-min);
-  margin: calc(var(--grid-gap) / 2 ) !important;
-}
-.grid.flex.albatross > * {
-  flex-basis: calc((var(--grid-min) - 100%) * 999);
-}
 
-.flexgrid {
+.flexgrid, .grid.flex {
   display: flex;
   flex-wrap: wrap;
   margin: calc(var(--grid-gap) / -2 ) !important;
 }
-.flexgrid > * {
+.flexgrid > *, .grid.flex > * {
   flex-shrink: 1;
   flex-grow: 1;
   flex-basis: var(--grid-min);
   margin: calc(var(--grid-gap) / 2 ) !important;
 }
-.flexgrid.albatross > * {
+.flexgrid.albatross > *, .grid.flex.albatross > * {
   flex-basis: calc((var(--grid-min) - 100%) * 999);
 }
 

@@ -23,7 +23,7 @@ $grid-min: 20rem
   margin: calc(var(--grid-gap) / -2 ) !important
 
   > *   // default is "pancake" wrapping (refer to link)
-    flex-shrink: 1
+    // flex-shrink: 1 // is default value - NB shrinks only after wrap
     flex-grow: 1
     flex-basis: var(--grid-min)
     // simulated grid gap
@@ -38,12 +38,8 @@ $grid-min: 20rem
       @include grid()
   @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
     @include flexgrid()
-  &.flex // flex version of .grid
-    @include flexgrid()
 
-// .flex.grid, same as .grid.flex
-
-.flexgrid
+.flexgrid, .grid.flex // .flex.grid, same as .grid.flex
   @include flexgrid()
 
 .flex--auto // refer to linked article for description

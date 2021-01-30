@@ -78,15 +78,15 @@
 }
 
 .m-1 {
-  margin: var(--spacer) !important;
+  margin: 0.5rem !important;
 }
 
 .m-2 {
-  margin: calc(2 * var(--spacer)) !important;
+  margin: 1rem !important;
 }
 
 .m-4 {
-  margin: calc(4 * var(--spacer)) !important;
+  margin: 2rem !important;
 }
 
 .p-0 {
@@ -94,15 +94,15 @@
 }
 
 .p-1 {
-  padding: var(--spacer) !important;
+  padding: 0.5rem !important;
 }
 
 .p-2 {
-  padding: calc(2 * var(--spacer)) !important;
+  padding: 1rem !important;
 }
 
 .p-4 {
-  padding: calc(4 * var(--spacer)) !important;
+  padding: 2rem !important;
 }
 
 .h-0 {
@@ -110,15 +110,15 @@
 }
 
 .h-1 {
-  height: var(--spacer) !important;
+  height: 0.5rem !important;
 }
 
 .h-2 {
-  height: calc(2 * var(--spacer)) !important;
+  height: 1rem !important;
 }
 
 .h-4 {
-  height: calc(4 * var(--spacer)) !important;
+  height: 2rem !important;
 }
 
 .h-full {
@@ -130,15 +130,15 @@
 }
 
 .w-1 {
-  width: var(--spacer) !important;
+  width: 0.5rem !important;
 }
 
 .w-2 {
-  width: calc(2 * var(--spacer)) !important;
+  width: 1rem !important;
 }
 
 .w-4 {
-  width: calc(4 * var(--spacer)) !important;
+  width: 2rem !important;
 }
 
 .w-full {
@@ -195,7 +195,7 @@
 }
 
 .rounded {
-  border-radius: var(--spacer);
+  border-radius: 0.5rem;
 }
 
 .elliptic {
