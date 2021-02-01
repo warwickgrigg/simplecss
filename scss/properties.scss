@@ -2,16 +2,6 @@
 @import "variables.scss";
 
 :root {
-  --dark-color: #{$dark-color};
   --main-bg-color: #{$main-bg-color};
   --main-fg-color: #{$main-fg-color};
-
-  --card-min-width: #{$card-min-width};
-  --card-default-width: #{$card-default-width};
-  --card-header-color: #{$card-header-color};
-  --card-fg-color: #{$card-fg-color};
-  --card-bg-color: #{$card-bg-color};
-  --card-header-height: #{$card-header-height};
-  --card-footer-height: #{$card-footer-height};
-  --media-figure-width: #{$media-figure-width};
 }

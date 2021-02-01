@@ -218,12 +218,12 @@
   background: red;
 }
 
-ul.plain {
+.list-plain {
   list-style: none;
   margin: 0;
   padding: 0;
 }
-ul.plain > li {
+.list-plain > li {
   margin: 0;
   padding: 0;
 }

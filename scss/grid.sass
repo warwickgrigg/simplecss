@@ -4,10 +4,10 @@
 
 @import "variables.scss"
 
-$grid-min: 20rem
+$grid-min: 20rem  // grid will wrap when free space less than this
 
 \:root
-  --grid-min: #{$grid-min}
+  --grid-min: #{$grid-min} 
   --grid-gap: #{2 * $spacer}
 
 @mixin grid() // for modern browsers eg. Chrome, FF, Edge  not IE 10/11
@@ -22,7 +22,7 @@ $grid-min: 20rem
   // counteract item margin
   margin: calc(var(--grid-gap) / -2 ) !important
 
-  > *   // default is "pancake" wrapping (refer to link)
+  > *, > li   // default is "pancake" wrapping (refer to link)
     // flex-shrink: 1 // is default value - NB shrinks only after wrap
     flex-grow: 1
     flex-basis: var(--grid-min)
@@ -32,14 +32,14 @@ $grid-min: 20rem
   &.albatross > *   // "albatross" wrapping (refer to link)
     flex-basis: calc((var(--grid-min)  - 100%) * 999)
 
-.grid
-  @supports (display: grid)
-    &:not(.flex)
-      @include grid()
-  @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
+@supports (display: grid)
+  .grid:not(.flex)
+    @include grid()
+@media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
+  .grid, ul.grid
     @include flexgrid()
 
-.flexgrid, .grid.flex // .flex.grid, same as .grid.flex
+.grid.flex, .flexgrid, ul.flexgrid // flexbox grid. flex.grid = .grid.flex
   @include flexgrid()
 
 .flex--auto // refer to linked article for description
