@@ -70,7 +70,7 @@ nav.nav > ul > li .dropdown__title svg:focus {
   transition: 280ms all 120ms ease-out;
   flex-direction: column;
   min-width: 25ch;
-  top: calc(100% + .5rem);
+  top: calc(100% + 0.5rem);
   transform: rotateX(-90deg) translateX(-50%);
   transform-origin: top center;
   visibility: hidden;

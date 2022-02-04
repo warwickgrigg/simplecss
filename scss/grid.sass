@@ -1,7 +1,8 @@
 // Modern container responsive grid (.grid) with .flexgrid fallback for IE11
 
-// Inspired by https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/
+// see https://moderncss.dev/container-query-solutions-with-css-grid-and-flexbox/
 
+@use "sass:math"
 @import "variables.scss"
 
 $grid-min: 20rem  // grid will wrap when free space less than this
@@ -19,24 +20,24 @@ $grid-min: 20rem  // grid will wrap when free space less than this
 @mixin flexgrid()  // .grid for older browsers eg. IE11
   display: flex
   flex-wrap: wrap
-  // counteract item margin
-  margin: calc(var(--grid-gap) / -2 ) !important
-
+  margin: calc( 0 - ( var(--grid-gap) ) / 2  ) !important  // counteract grid gap
   > *, > li   // default is "pancake" wrapping (refer to link)
-    // flex-shrink: 1 // is default value - NB shrinks only after wrap
+    flex-shrink: 1 // is default value - NB shrinks only after wrap
     flex-grow: 1
     flex-basis: var(--grid-min)
     // simulated grid gap
     margin: calc(var(--grid-gap) / 2 ) !important
-
   &.albatross > *   // "albatross" wrapping (refer to link)
+    xmargin: 0
     flex-basis: calc((var(--grid-min)  - 100%) * 999)
 
 @supports (display: grid)
   .grid:not(.flex)
     @include grid()
+
 @media only screen and (-ms-high-contrast: active), (-ms-high-contrast: none) // IE11
   .grid, ul.grid
+    xmargin: 0
     @include flexgrid()
 
 .grid.flex, .flexgrid, ul.flexgrid // flexbox grid. flex.grid = .grid.flex
